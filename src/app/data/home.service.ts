@@ -1,5 +1,6 @@
 import { Injectable, EventEmitter } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
+import {EnumConvert} from '../interface/mapper';
 
 
 //import * as tabsJson from 'data.json';
@@ -53,6 +54,20 @@ export class HomeService {
    }
    addPortlets(val){
 
+   }
+
+   getPortletsList(): any[]{
+    const enumValues = EnumConvert.convertPortletTypesValues();
+    const portletList = [];
+    _.forEach(enumValues, v => {
+     const val = _.find(this.currentTab.portlets, (x) => x.type === 'v.enumVal');
+     if(_.isNil(val)){
+       portletList.push({isSelected: false, enumVal: v.enumVal, displayVal: v.displayVal})
+     }else{
+       portletList.push({isSelected: true, enumVal: v.enumVal, displayVal: v.displayVal})
+     }
+    });  
+    return portletList;
    }
 
 }

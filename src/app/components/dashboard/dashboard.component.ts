@@ -33,7 +33,8 @@ export class DashboardComponent implements OnInit {
       this.actionTitle = evt.actionTitle;
       this.openDialog(evt);
     }else if(evt.actionTitle === 'Add Portlet'){
-      this.valueList = EnumConvert.convertPortletTypesValues();
+      this.valueList = this.service.getPortletsList();
+      console.log('portlet list', this.valueList);
       this.actionType = 'AddPortlet';
       this.val = '';
       this.actionTitle = evt.actionTitle;
@@ -68,6 +69,7 @@ export class DashboardComponent implements OnInit {
   
 })
 export class HeaderActionDataComponent {
+displayedColumns = ['isSelected', 'displayVal'];
 
   constructor(
     public dialogRef: MatDialogRef<HeaderActionDataComponent>,
