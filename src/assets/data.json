@@ -1,0 +1,34 @@
+ [{
+ 	"name": "First Tab",
+ 	"order": "1",
+ 	"portlets": [
+     {
+       "name": "MyDocuments",
+       "title": "My Documents",
+       "type": "MyDocuments"
+
+     },{
+       "name": "MyAlerts",
+       "title": "My Alerts",
+       "type": "MyAlerts"
+
+     },{
+       "name": "MyLinks",
+       "title": "My Links",
+       "type": "MyLinks"
+
+     },{
+       "name": "NotificationRules",
+       "title": "Notification Rules",
+       "type": "NotificationRules"
+
+     },
+     {
+       "name": "MyWork",
+       "title": "My Work",
+       "type": "MyWorks"
+
+     }
+   ]
+
+ }]

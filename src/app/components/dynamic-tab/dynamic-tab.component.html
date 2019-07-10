@@ -1,0 +1,10 @@
+<div style="width: 100vw; height: 100vh;">
+<mat-tab-group (selectedTabChange)="currentTabSelection($event)">
+  <mat-tab *ngFor = "let tab of tabs" label="{{tab.name}}">
+    <app-portlet-canvas [portlets] = "tab.portlets"> </app-portlet-canvas>
+  </mat-tab>
+ 
+</mat-tab-group> 
+</div>
+
+

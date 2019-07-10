@@ -1,0 +1,9 @@
+  <app-dynamic-tab> </app-dynamic-tab>  
+<mat-form-field>
+  <mat-label>Action</mat-label>
+  <mat-select (selectionChange)="onSelectionChange($event.value)" *ngIf ="headerMenus">
+    <mat-option *ngFor="let headerMenu of headerMenus" [value]="headerMenu" >
+      {{headerMenu.actionTitle}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>

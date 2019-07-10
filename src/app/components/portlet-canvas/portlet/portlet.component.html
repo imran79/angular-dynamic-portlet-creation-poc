@@ -1,0 +1,18 @@
+
+<div [ngSwitch] = "portletType">
+  <div *ngSwitchCase = "'MyWorks'">
+    <app-my-work-portlet></app-my-work-portlet>
+  </div>
+  <div *ngSwitchCase = "'NotificationRules'">
+    <app-my-notifications-portlet></app-my-notifications-portlet>
+  </div>
+  <div *ngSwitchCase = "'MyDocuments'">
+    <app-my-documents-portlet></app-my-documents-portlet>
+  </div>
+  <div *ngSwitchCase = "'MyAlerts'">
+    <app-my-alert-portlet></app-my-alert-portlet>
+  </div>
+  <div *ngSwitchCase = "'MyLinks'">
+    <app-my-links-portlet></app-my-links-portlet>
+  </div>
+</div>

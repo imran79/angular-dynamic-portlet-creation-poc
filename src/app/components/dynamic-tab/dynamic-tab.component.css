@@ -1,0 +1,7 @@
+.mat-tab-header {
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    flex-shrink: 0;
+    width: 70% !important;
+}
