@@ -21,6 +21,7 @@ export class PortletCanvasComponent implements OnInit {
   @Input()
   set portlets(value){
     console.log('Portlets value', value);
+    
     this._portlets.next(value);
   }
 

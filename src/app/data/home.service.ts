@@ -52,8 +52,15 @@ export class HomeService {
    renameTab(val){
 
    }
-   addPortlets(val){
+   addPortlets = (val) => {
      console.log('Add portlets value', val);
+     _.forEach(this.currentTab.portlets, (p) => {
+       const v = _.find(val, (x) => x.type === p.type && !x.isSelected );
+       if(!_.isNil(v)){
+           _.remove(this.currentTab.portlets, (y) => p.type === y.type);
+       }
+
+     });
    }
 
    getPortletsList(): any[]{
