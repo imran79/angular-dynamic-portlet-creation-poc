@@ -37,7 +37,7 @@ export class DashboardComponent implements OnInit {
       
       console.log('portlet list', this.valueList);
       this.actionType = 'AddPortlet';
-      this.val = '';
+     
       this.actionTitle = evt.actionTitle;
 
       this.openDialog(evt);
