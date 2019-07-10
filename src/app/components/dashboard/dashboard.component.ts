@@ -33,8 +33,8 @@ export class DashboardComponent implements OnInit {
       this.actionTitle = evt.actionTitle;
       this.openDialog(evt);
     } else if (evt.actionTitle === 'Add Portlet') {
-      this.valueList = this.service.getPortletsList();
-      this.val = this.valueList;
+      this.val = this.service.getPortletsList();
+      
       console.log('portlet list', this.valueList);
       this.actionType = 'AddPortlet';
       this.val = '';
@@ -53,7 +53,7 @@ export class DashboardComponent implements OnInit {
 
     const dialogRef = this.dialog.open(HeaderActionDataComponent, {
       width: '250px',
-      data: { type: this.actionType, title: this.actionTitle, value: this.val, valueList: this.valueList }
+      data: { type: this.actionType, title: this.actionTitle, value: this.val }
     });
 
     dialogRef.afterClosed().subscribe(result => {
