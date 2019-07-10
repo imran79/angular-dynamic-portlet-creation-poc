@@ -60,7 +60,7 @@ export class HomeService {
     const enumValues = EnumConvert.convertPortletTypesValues();
     const portletList = [];
     _.forEach(enumValues, v => {
-     const val = _.find(this.currentTab.portlets, (x) => x.type === 'v.enumVal');
+     const val = _.find(this.currentTab.portlets, (x) => x.type === v.enumVal);
      if(_.isNil(val)){
        portletList.push({isSelected: false, enumVal: v.enumVal, displayVal: v.displayVal})
      }else{

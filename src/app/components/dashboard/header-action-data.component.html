@@ -17,26 +17,26 @@
   
 
 
-  <table mat-table [dataSource]="data.valueList" class="mat-elevation-z8">
+  <table mat-table [dataSource]="data.valueList"  >
 
   <!--- Note that these columns can be defined in any order.
         The actual rendered columns are set as a property on the row definition" -->
 
   <!-- Position Column -->
   <ng-container matColumnDef="isSelected">
-    <th mat-header-cell *matHeaderCellDef> check </th>
+    
     <td mat-cell *matCellDef="let element"  >  <mat-checkbox [(ngModel)]="element.isSelected"></mat-checkbox> </td>
   </ng-container>
 
   <!-- Name Column -->
   <ng-container matColumnDef="displayVal">
-    <th mat-header-cell *matHeaderCellDef> Portlet Type </th>
-    <td mat-cell *matCellDef="let element"> {{element.displayVal}} </td>
-  </ng-container>
+   
+    <td mat-cell *matCellDef="let element" style="padding-left:20px;"> {{element.displayVal}} </td>
+  </ng-container> 
 
   <!-- Weight Column -->
 
-  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  
   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 </table>
 
