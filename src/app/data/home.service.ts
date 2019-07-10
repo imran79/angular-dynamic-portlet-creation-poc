@@ -53,7 +53,7 @@ export class HomeService {
 
    }
    addPortlets(val){
-
+     console.log('Add portlets value', val);
    }
 
    getPortletsList(): any[]{
