@@ -54,13 +54,25 @@ export class HomeService {
    }
    addPortlets = (val) => {
      console.log('Add portlets value', val);
-     _.forEach(this.currentTab.portlets, (p) => {
-       const v = _.find(val, (x) => x.type === p.type && !x.isSelected );
+     _.forEach(val, (p) => {
+       const v = _.find(this.currentTab.portlets, (x) => x.type === p.enumVal && !p.isSelected );
+       const w =  _.find(this.currentTab.portlets, (x) => x.type === p.enumVal);
        if(!_.isNil(v)){
-           _.remove(this.currentTab.portlets, (y) => p.type === y.type);
+           _.remove(this.currentTab.portlets, (y) => p.enumVal === y.type);
+       }else if(_.isNil(w) && p.isSelected){
+         this.currentTab.portlets.push(<Portlet>{name: p.enumVal, title: p.displayVal, type:p.enumVal});
        }
 
      });
+    // updating the tab collection -
+    _.forEach(this.tabsCollection, (t) => {
+      if(t.name === this.currentTab.name){
+        t = this.currentTab;
+      }
+
+    });
+    this.tabSub.next(this.tabsCollection);
+     
    }
 
    getPortletsList(): any[]{
